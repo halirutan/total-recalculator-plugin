@@ -1,0 +1,55 @@
+{
+  parserClass="org.trc.language.parser.TRCParser"
+  parserUtilClass="org.trc.language.parser.TRCParserUtil"
+
+  psiClassPrefix="TRC"
+  psiImplClassSuffix="Impl"
+  psiPackage="org.trc.language.psi"
+  psiImplPackage="org.trc.language.psi.impl"
+  psiImplUtilClass="org.trc.language.psi.impl.TRCPsiImplUtil"
+
+  elementTypeHolderClass="org.trc.language.psi.TRCTypes"
+  elementTypeClass="org.trc.language.psi.TRCElementType"
+  tokenTypeClass="org.trc.language.psi.TRCTokenType"
+
+  tokens=[
+    SEMICOLON=';'
+    EQUAL='='
+    LEFT_PAREN='('
+    RIGHT_PAREN=')'
+
+    space='regexp:\s+'
+    comment='regexp://.*'
+    number='regexp:\d+(\.\d*)?'
+    id='regexp:\p{Alpha}\w*'
+    string="regexp:('([^'\\]|\\.)*'|\"([^\"\\]|\\.)*\")"
+
+    OP_PLUS='+'
+    OP_MINUS='-'
+    OP_TIMES='*'
+    OP_DIVIDE='/'
+    OP_FACTORIAL='!'
+  ]
+
+  name(".*expr")='expression'
+  extends(".*expr")=expr
+}
+
+root ::= root_item *
+private root_item ::= !<<eof>> property ';' {pin=1 recoverWhile=property_recover}
+
+property ::= id '=' expr  {pin=2}
+private property_recover ::= !(';' | id '=')
+
+expr ::= factor plus_expr *
+left plus_expr ::= plus_op factor
+private plus_op ::= '+'|'-'
+private factor ::= primary mul_expr *
+left mul_expr  ::= mul_op primary
+private mul_op ::= '*'|'/'
+private primary ::= primary_inner factorial_expr ?
+left factorial_expr ::= '!'
+private primary_inner ::= literal_expr | ref_expr | paren_expr
+paren_expr ::= '(' expr ')' {pin=1}
+ref_expr ::= id
+literal_expr ::= number | string

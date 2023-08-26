@@ -1,16 +1,20 @@
 import org.jetbrains.changelog.Changelog
 import org.jetbrains.changelog.markdownToHTML
+import org.jetbrains.dokka.gradle.DokkaTask
+import java.net.URL
 
 fun properties(key: String) = providers.gradleProperty(key)
 fun environment(key: String) = providers.environmentVariable(key)
 
 plugins {
     id("java") // Java support
+    id("org.jetbrains.grammarkit") version "2022.3.1"
     alias(libs.plugins.kotlin) // Kotlin support
     alias(libs.plugins.gradleIntelliJPlugin) // Gradle IntelliJ Plugin
     alias(libs.plugins.changelog) // Gradle Changelog Plugin
     alias(libs.plugins.qodana) // Gradle Qodana Plugin
     alias(libs.plugins.kover) // Gradle Kover Plugin
+    id("org.jetbrains.dokka") version "1.8.20"
 }
 
 group = properties("pluginGroup").get()
@@ -30,6 +34,15 @@ dependencies {
 kotlin {
     jvmToolchain(17)
 }
+
+sourceSets {
+    main {
+        java {
+            srcDirs("src/main/gen")
+        }
+    }
+}
+
 
 // Configure Gradle IntelliJ Plugin - read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
@@ -67,6 +80,10 @@ koverReport {
 tasks {
     wrapper {
         gradleVersion = properties("gradleVersion").get()
+    }
+
+    buildSearchableOptions {
+        enabled = false
     }
 
     patchPluginXml {
@@ -124,4 +141,29 @@ tasks {
         // https://plugins.jetbrains.com/docs/intellij/deployment.html#specifying-a-release-channel
         channels = properties("pluginVersion").map { listOf(it.split('-').getOrElse(1) { "default" }.split('.').first()) }
     }
+
+    withType<DokkaTask>().configureEach {
+        dokkaSourceSets {
+            named("main") {
+                // used as project name in the header
+                moduleName.set("The Total Recalculator")
+
+                // contains descriptions for the module and the packages
+                includes.from("Documentation.md", "src/main/kotlin/org/trc/Documentation.md")
+
+                // adds source links that lead to this repository, allowing readers
+                // to easily find source code for inspected declarations
+                sourceLink {
+                    localDirectory.set(file("src/main/kotlin"))
+                    remoteUrl.set(
+                        URL(
+                            "https://github.com/halirutan/total-recalculator-plugin/tree/master/"
+                        )
+                    )
+                    remoteLineSuffix.set("#L")
+                }
+            }
+        }
+    }
+
 }

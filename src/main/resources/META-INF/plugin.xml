@@ -1,18 +1,21 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.halirutan.totalrecalculatorplugin</id>
-    <name>total-recalculator-plugin Template</name>
+    <name>The Total Recalculator</name>
     <vendor>halirutan</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <resource-bundle>messages.TRCBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.halirutan.totalrecalculatorplugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <fileType
+                name="Total Recalculator File"
+                implementationClass="org.trc.language.TRCFileType"
+                fieldName="INSTANCE"
+                language="TRC"
+                extensions="trc"
+                />
+        <lang.parserDefinition language="TRC" implementationClass="org.trc.language.parser.TRCParserDefinition"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.halirutan.totalrecalculatorplugin.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
 </idea-plugin>
