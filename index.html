@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>The Total Recalculator</title>
+    <link href="images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="scripts/sourceset_dependencies.js" async="async"></script>
+<link href="styles/style.css" rel="Stylesheet">
+<link href="styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="styles/main.css" rel="Stylesheet">
+<link href="styles/prism.css" rel="Stylesheet">
+<link href="styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="index.html">
+                    <span>The Total Recalculator</span>
+            </a>
+    </div>
+    <div>
+0.0.1    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":dokkaHtml/main">jvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="The Total Recalculator::////PointingToDeclaration//769193423">
+  <div class="breadcrumbs"></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>The</span></span> <span><span>Total</span></span> <span><span>Recalculator</span></span></h1>
+    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><h2 class=""> Template ToDo listtttt</h2><ul><li><p class="paragraph">Create a new <a href="https://github.com/JetBrains/intellij-platform-plugin-template">IntelliJ Platform Plugin Template</a> project.</p></li><li><p class="paragraph">Get familiar with the <a href="https://github.com/JetBrains/intellij-platform-plugin-template">template documentation</a>.</p></li><li><p class="paragraph">Adjust the ./gradle.properties, ./src/main/resources/META-INF/plugin.xml and ./src/main/kotlin.</p></li><li><p class="paragraph">Adjust the plugin description in <code class="lang-kotlin">README</code> (see <a href="https://plugins.jetbrains.com/docs/intellij/plugin-user-experience.html#plugin-description-and-presentation">Tips</a>)</p></li><li><p class="paragraph">Review the <a href="https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate">Legal Agreements</a>.</p></li><li><p class="paragraph"><a href="https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate">Publish a plugin manually</a> for the first time.</p></li><li><p class="paragraph">Set the <code class="lang-kotlin">PLUGIN_ID</code> in the above README badges.</p></li><li><p class="paragraph">Set the <a href="https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate">Plugin Signing</a> related <a href="https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables">secrets</a>.</p></li><li><p class="paragraph">Set the <a href="https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html?from=IJPluginTemplate">Deployment Token</a>.</p></li><li><p class="paragraph">Click the <kbd>Watch</kbd> button on the top of the <a href="https://github.com/JetBrains/intellij-platform-plugin-template">IntelliJ Platform Plugin Template</a> to be notified about releases containing new features and fixes.</p></li></ul><h2 class=""> Installation</h2><ul><li><p class="paragraph">Using the IDE built-in plugin system:</p><p class="paragraph"><kbd>Settings/Preferences</kbd> <kbd>Plugins</kbd> <kbd>Marketplace</kbd> <kbd>Search for &quot;total-recalculator-plugin&quot;</kbd> <kbd>Install</kbd></p></li><li><p class="paragraph">Manually:</p><p class="paragraph">Download the <a href="https://github.com/halirutan/total-recalculator-plugin/releases/latest">latest release</a> and install it manually using   <kbd>Settings/Preferences</kbd> <kbd>Plugins</kbd> <kbd>⚙️</kbd> <kbd>Install plugin from disk...</kbd></p></li></ul><p class="paragraph">Plugin based on the <a href="https://github.com/JetBrains/intellij-platform-plugin-template">IntelliJ Platform Plugin Template</a>.</p></div></div>
+  </div>
+  <h2 class="">Packages</h2>
+  <div class="table"><a data-name="1730757821%2FPackages%2F769193423" anchor-label="org.trc" id="1730757821%2FPackages%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-the -total -recalculator/org.trc/index.html">org.trc</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1730757821%2FPackages%2F769193423"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-1348657811%2FPackages%2F769193423" anchor-label="org.trc.language" id="-1348657811%2FPackages%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-the -total -recalculator/org.trc.language/index.html">org.trc.language</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1348657811%2FPackages%2F769193423"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-1348657811%2FPackages%2F769193423" anchor-label="org.trc.language" id="-1348657811%2FPackages%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+            <p class="paragraph">Test me again</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="1261465419%2FPackages%2F769193423" anchor-label="org.trc.language.lexer" id="1261465419%2FPackages%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-the -total -recalculator/org.trc.language.lexer/index.html">org.trc.language.lexer</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1261465419%2FPackages%2F769193423"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="1261465419%2FPackages%2F769193423" anchor-label="org.trc.language.lexer" id="1261465419%2FPackages%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+            <p class="paragraph">This thing is <a href="-the -total -recalculator/org.trc.language.lexer/-t-r-c-lexer-adapter/index.html">link</a> and let's see if it works.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="1767374212%2FPackages%2F769193423" anchor-label="org.trc.language.parser" id="1767374212%2FPackages%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-the -total -recalculator/org.trc.language.parser/index.html">org.trc.language.parser</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1767374212%2FPackages%2F769193423"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="1767374212%2FPackages%2F769193423" anchor-label="org.trc.language.parser" id="1767374212%2FPackages%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+            <p class="paragraph">Hello folks. This is a test.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-1753031227%2FPackages%2F769193423" anchor-label="org.trc.language.psi" id="-1753031227%2FPackages%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-the -total -recalculator/org.trc.language.psi/index.html">org.trc.language.psi</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1753031227%2FPackages%2F769193423"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>
