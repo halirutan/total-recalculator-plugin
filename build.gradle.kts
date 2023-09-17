@@ -183,7 +183,7 @@ tasks {
                     localDirectory.set(file("src/main/kotlin"))
                     remoteUrl.set(
                         URL(
-                            "https://github.com/halirutan/total-recalculator-plugin/tree/master/"
+                            "https://github.com/halirutan/total-recalculator-plugin/tree/main/"
                         )
                     )
                     remoteLineSuffix.set("#L")

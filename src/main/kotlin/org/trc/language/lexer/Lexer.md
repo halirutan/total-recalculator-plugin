@@ -1,6 +1,13 @@
 # Package org.trc.language.lexer
 
-This thing is [link](org.trc.language.lexer.TRCLexerAdapter) and let's see if it works.
+For breaking the code into lexical tokens, a so-called lexer is required.
+It takes the code and breaks it into meaningful chunks (tokens) which are then the basis
+for [the parser](org.trc.language.parser).
+The parser will in turn create a tree from the sequence of tokens to represent the structure
+of the code.
+At the lowest level, the leafs of this tree will be the tokens.
+
+
 
 ```jflex
 package org.trc.language.lexer;
