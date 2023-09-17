@@ -75,15 +75,6 @@ jobs:
       - name: Build plugin
         run: ./gradlew buildPlugin
 
-      - name: Build Pages
-        run: ./gradlew dokkaHtml
-
-      - name: Deploy Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/dokka/html
-
       # Prepare plugin archive content for creating artifact
       - name: Prepare Plugin Artifact
         id: artifact
