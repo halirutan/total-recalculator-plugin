@@ -1,6 +1,7 @@
 import org.jetbrains.changelog.Changelog
 import org.jetbrains.changelog.markdownToHTML
 import org.jetbrains.dokka.gradle.DokkaTask
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.net.URL
 
 fun properties(key: String) = providers.gradleProperty(key)
@@ -86,18 +87,38 @@ tasks {
         enabled = false
     }
 
+    generateLexer {
+        sourceFile.fileValue(project.file("src/main/grammars/_TRCLexer.flex"))
+        targetDir.set("src/main/gen/org/trc/language/lexer")
+        targetClass.set("_TRCLexer")
+        purgeOldFiles.set(true)
+    }
+
+    generateParser {
+        sourceFile.fileValue(project.file("src/main/grammars/TRC.bnf"))
+        targetRoot.set("src/main/gen")
+        pathToParser.set("/org/trc/language/parser/TRCParser.java")
+        pathToPsiRoot.set("/org/trc/language/psi")
+        purgeOldFiles.set(true)
+    }
+
+    withType<KotlinCompile> {
+        dependsOn(generateLexer, generateParser)
+    }
+
     patchPluginXml {
-        version = properties("pluginVersion")
+    version = properties("pluginVersion")
         sinceBuild = properties("pluginSinceBuild")
         untilBuild = properties("pluginUntilBuild")
 
         // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
         pluginDescription = providers.fileContents(layout.projectDirectory.file("README.md")).asText.map {
-            val start = "<!-- Plugin description -->"
+        val start = "<!-- Plugin description -->"
             val end = "<!-- Plugin description end -->"
 
             with (it.lines()) {
-                if (!containsAll(listOf(start, end))) {
+
+            if (!containsAll(listOf(start, end))) {
                     throw GradleException("Plugin description section not found in README.md:\n$start ... $end")
                 }
                 subList(indexOf(start) + 1, indexOf(end)).joinToString("\n").let(::markdownToHTML)
@@ -149,7 +170,9 @@ tasks {
                 moduleName.set("The Total Recalculator")
 
                 // contains descriptions for the module and the packages
-                includes.from("Documentation.md", "src/main/kotlin/org/trc/Documentation.md")
+                includes.from("Documentation.md")
+                includes.from("src/main/kotlin/org/trc/Documentation.md")
+                includes.from("src/main/kotlin/org/trc/language/lexer/lexer.md")
 
                 // adds source links that lead to this repository, allowing readers
                 // to easily find source code for inspected declarations
