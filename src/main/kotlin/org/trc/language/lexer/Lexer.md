@@ -7,7 +7,12 @@ The parser will in turn create a tree from the sequence of tokens to represent t
 of the code.
 At the lowest level, the leafs of this tree will be the tokens.
 
+Here, we use the lexer generator JFlex to create a lexer from a `.jflex` definition file that in it's
+core uses regular expressions that define how specific tokes are matched.
+The automatically generated lexer code is then used with [an adapter](org.trc.language.lexer.TRCLexerAdapter) to
+make it suitable for the IntelliJ Platform interface.
 
+Below, you see the JFlex definition that can also be found by navigating to the source code:
 
 ```jflex
 package org.trc.language.lexer;
