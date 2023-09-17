@@ -88,14 +88,14 @@ tasks {
     }
 
     generateLexer {
-        sourceFile.fileValue(project.file("src/main/grammars/_TRCLexer.flex"))
+        sourceFile.fileValue(project.file("src/main/kotlin/org/trc/language/lexer/_TRCLexer.flex"))
         targetDir.set("src/main/gen/org/trc/language/lexer")
         targetClass.set("_TRCLexer")
         purgeOldFiles.set(true)
     }
 
     generateParser {
-        sourceFile.fileValue(project.file("src/main/grammars/TRC.bnf"))
+        sourceFile.fileValue(project.file("src/main/kotlin/org/trc/language/parser/TRC.bnf"))
         targetRoot.set("src/main/gen")
         pathToParser.set("/org/trc/language/parser/TRCParser.java")
         pathToPsiRoot.set("/org/trc/language/psi")
@@ -165,14 +165,17 @@ tasks {
 
     withType<DokkaTask>().configureEach {
         dokkaSourceSets {
+
             named("main") {
                 // used as project name in the header
                 moduleName.set("The Total Recalculator")
+                suppressInheritedMembers.set(true)
 
                 // contains descriptions for the module and the packages
                 includes.from("Documentation.md")
                 includes.from("src/main/kotlin/org/trc/Documentation.md")
-                includes.from("src/main/kotlin/org/trc/language/lexer/lexer.md")
+                includes.from("src/main/kotlin/org/trc/language/lexer/Lexer.md")
+                includes.from("src/main/kotlin/org/trc/language/parser/Parser.md")
 
                 // adds source links that lead to this repository, allowing readers
                 // to easily find source code for inspected declarations

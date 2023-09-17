@@ -5,7 +5,10 @@ import com.intellij.ui.IconManager
 import com.intellij.ui.PlatformIcons
 import javax.swing.Icon
 
-class TRCFileType: LanguageFileType(TRCLanguage.INSTANCE) {
+/**
+ * This is class doc of TRCFileType
+ */
+class TRCFileType : LanguageFileType(TRCLanguage.INSTANCE) {
 
     override fun getName(): String {
         return "Total Recalculator File"

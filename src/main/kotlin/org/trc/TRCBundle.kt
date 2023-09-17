@@ -8,7 +8,9 @@ import org.jetbrains.annotations.PropertyKey
 private const val BUNDLE = "messages.TRCBundle"
 
 /**
- * This is a test to document the bundle
+ * TRCBundle is a singleton object that provides localization support for the application.
+ *
+ * It extends the DynamicBundle class and uses a resource bundle with the name BUNDLE for retrieving localized messages.
  */
 object TRCBundle : DynamicBundle(BUNDLE) {
 
