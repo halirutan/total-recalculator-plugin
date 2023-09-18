@@ -29,8 +29,6 @@ $dokka.location:org.trc.language.psi/TRCTokenSets/TRCTokenSets/#/PointingToDecla
 $dokka.location:org.trc.language.psi/TRCTokenType///PointingToDeclaration/-the -total -recalculator/org.trc.language.psi/-t-r-c-token-type/index.html
 $dokka.location:org.trc.language.psi/TRCTokenType/TRCTokenType/#kotlin.String/PointingToDeclaration/-the -total -recalculator/org.trc.language.psi/-t-r-c-token-type/-t-r-c-token-type.html
 $dokka.location:org.trc.language////PointingToDeclaration/-the -total -recalculator/org.trc.language/index.html
-$dokka.location:org.trc.language/TRCFileType.Companion///PointingToDeclaration/-the -total -recalculator/org.trc.language/-t-r-c-file-type/-companion/index.html
-$dokka.location:org.trc.language/TRCFileType.Companion/INSTANCE/#/PointingToDeclaration/-the -total -recalculator/org.trc.language/-t-r-c-file-type/-companion/-i-n-s-t-a-n-c-e.html
 $dokka.location:org.trc.language/TRCFileType///PointingToDeclaration/-the -total -recalculator/org.trc.language/-t-r-c-file-type/index.html
 $dokka.location:org.trc.language/TRCFileType/TRCFileType/#/PointingToDeclaration/-the -total -recalculator/org.trc.language/-t-r-c-file-type/-t-r-c-file-type.html
 $dokka.location:org.trc.language/TRCFileType/getDefaultExtension/#/PointingToDeclaration/-the -total -recalculator/org.trc.language/-t-r-c-file-type/get-default-extension.html
