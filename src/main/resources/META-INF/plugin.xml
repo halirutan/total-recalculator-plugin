@@ -11,10 +11,9 @@
     <extensions defaultExtensionNs="com.intellij">
         <fileType
                 name="Total Recalculator File"
-                implementationClass="org.trc.language.TRCFileType"
-                fieldName="INSTANCE"
                 language="TRC"
                 extensions="trc"
+                implementationClass="org.trc.language.TRCFileType"
                 />
         <lang.parserDefinition language="TRC" implementationClass="org.trc.language.parser.TRCParserDefinition"/>
     </extensions>
